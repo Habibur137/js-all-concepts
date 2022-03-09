@@ -11,7 +11,7 @@ const filter = products.filter(product => !product.name.includes('p'))
 const filter1 = products.filter(product => !product.name.startsWith('phone'))
 const filter2 = products.filter(product => product.name.indexOf('p') !== -1)
 const filter3 = products.filter(product => product.name !== 'camera')
-console.log(filter2)
+// console.log(filter2)
 
 
 const map = products.map(({name, price}) => {
@@ -34,15 +34,22 @@ for(const item in ob){
 
 
 
-/* products.forEach(product => {
-    // console.log(Object.keys(product))
-    // console.log(Object.values(product[3]))
-    const array1 = Object.values(product)
-    const obj = {}
-    obj.name = array1
-   console.log(obj)
-}) */
+products.forEach(product => {
+    for(const pr in product){
+        // console.log(pr, product[pr])
+        const ob = {pr :product[pr]}
+        // console.log(ob)
+    }
+}) 
 
+const empty = [1, 2, 3, '', undefined, null, NaN, 0, false, 4, 6]
+const parse = [1, 2, 3, 4, '5', '6', '7']
+const removeFalsyValue = empty.filter(x => x)
+const parseStringNumber = parse.map(x => +x)
+
+const handredElement = new Array(100).fill().map( () => Math.floor(Math.random() * 100 + 1))
+const removeDuplicateFromhandredElement = new Array(100).fill().map( () => Math.floor(Math.random() * 100 + 1)).filter(element => element == element)
+console.log(removeDuplicateFromhandredElement)
 /* const productName = products.map(product => product.name)
 const newObj = {id:77, name:'bag', brand:'faltu', price:200, color:'green'}
 // console.log(productName)
@@ -53,3 +60,4 @@ const filter = products.filter(product => product.name !== 'wev cam')
 // console.log(filter)
 const cheapProducts = products.find(product => product.price < 7000)
 // console.log(cheapProducts) */
+

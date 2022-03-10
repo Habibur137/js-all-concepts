@@ -49,7 +49,7 @@ const parseStringNumber = parse.map(x => +x)
 
 const handredElement = new Array(100).fill().map( () => Math.floor(Math.random() * 100 + 1))
 const removeDuplicateFromhandredElement = new Array(100).fill().map( () => Math.floor(Math.random() * 100 + 1)).filter(element => element == element)
-console.log(removeDuplicateFromhandredElement)
+// console.log(removeDuplicateFromhandredElement)
 /* const productName = products.map(product => product.name)
 const newObj = {id:77, name:'bag', brand:'faltu', price:200, color:'green'}
 // console.log(productName)
@@ -61,3 +61,45 @@ const filter = products.filter(product => product.name !== 'wev cam')
 const cheapProducts = products.find(product => product.price < 7000)
 // console.log(cheapProducts) */
 
+// implimentation map method 
+function myMap(arr, callback){
+    let newArr = []
+    for(let i = 0; i < arr.length; i++){
+        let temp = callback(arr[i], i, arr)
+        newArr.push(temp)
+    }
+    return newArr
+}
+// console.log(myMap([1,2,3], function(value){
+//     return value * value
+// }))
+
+//implimentation filter method
+function myFilter(arr, callback){
+    let newArr = []
+    for(let i = 0; i < arr.length; i++){
+        if(callback(arr[i], i, arr)){
+            newArr.push(arr[i])
+        }
+    }
+    return newArr
+}
+
+const evenNumber = myFilter([1,2,3,4,5], function(value){
+    return value % 2 == 0
+})
+// console.log(evenNumber)
+//implimentation find method
+function find(arr, callback){
+    let newItem;
+    for(let i = 0; i < arr.length; i++){
+        if(callback(arr[i], i, arr)){
+            return newItem = arr[i]
+        }
+    }
+}
+
+console.log(find([{name:'phone', price:400},{name:'laptop', price:600}], function (value, i){
+    console.log(value.price)
+    return value.price > 500
+}))

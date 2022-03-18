@@ -1,4 +1,30 @@
 
+// console.log(x)
+// saySomthing()
+
+var x = 7
+
+function saySomthing(){
+    console.log('somthing')
+}
+// saySomthing()
+// console.log(x)
+// console.log(x)
+// saySomthing()
+
+
+function a (){
+    var a = 10
+    function b(){
+        console.log('some')
+    }
+    b()
+}
+a()
+
+
+
+
 // var keyword hoisting
 // var a;
 // a = undefined;
@@ -11,7 +37,7 @@
 // console.log(b)
 // let b = 'bangladesh'
 
-let LANGUAGE = 'JAVA'
+/* let LANGUAGE = 'JAVA'
 let language = 'javascript'
 
 function getLanguage(){
@@ -28,15 +54,15 @@ function myFunc(){
     var language;
     console.log(language)
 }
+ */
+// myFunc()
 
-myFunc()
-
-myFunc1()
-const myFunc1 = function(){
-    let language;
-    language = 'javascript'
-    console.log(language)
-}
+// myFunc1()
+// const myFunc1 = function(){
+//     let language;
+//     language = 'javascript'
+//     console.log(language)
+// }
 
 
 
